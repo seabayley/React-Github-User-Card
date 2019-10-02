@@ -1,0 +1,33 @@
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import Avatar from '@material-ui/core/Avatar';
+
+const useStyles = makeStyles({
+
+});
+
+const UserCard = props => {
+    const classes = useStyles()
+
+    return (
+        <Card>
+            <CardContent>
+                <Avatar src={props.data.avatar_url} />
+                <Typography>
+                    Username: {props.data.login}
+                </Typography>
+                <Typography>
+                    Name: {props.data.name}
+                </Typography>
+                <Typography>
+                    Followers: {props.data.followers}
+                </Typography>
+            </CardContent>
+        </Card>
+    )
+}
+
+export default UserCard;
